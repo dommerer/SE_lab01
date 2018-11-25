@@ -12,21 +12,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         .txt-center {
-        text-align: center;
-      }
-      .txt-font {
-        font-family: "Prompt", sans-serif;
-      }
-      .img-github{
-          width: 100px;
-          height: 100px;
-      }
+            text-align: center;
+        }
+
+        .txt-font {
+            font-family: "Prompt", sans-serif;
+        }
+
+        .img-github {
+            width: 100px;
+            height: 100px;
+        }
+
+        .title {
+            padding: 10px; 
+            margin: 25px; 
+            background-color: rgb(43, 49, 54); 
+            color: rgb(255, 255, 255);
+        }
     </style>
 </head>
 
 <body class="txt-font">
     <!----------------------------------------------------------->
-    <h1 style="padding: 10px; margin: 25px; background-color: rgb(43, 49, 54); color: rgb(255, 255, 255);"> Software
+    <h1 style=""> Software
         Engineering Work Lab01 - Github </h1>
     <div style="margin-left: 100px;">
         <h2>Group Profile</h2>
@@ -193,8 +202,8 @@
 
     <!-- กราฟ -->
     <br><br>
-        <div id="chartContainer" style="height: 370px; width: 40%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+    <div id="chartContainer" style="height: 370px; width: 40%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
     <br><br>
 
     <script type="text/javascript">
@@ -206,24 +215,38 @@
                 title: {
                     text: "GPA"
                 },
-                data: [
-                    {
-                        // Change type to "bar", "area", "spline", "pie",etc.
-                        type: "column",
-                        dataPoints: [
-                            { label: "Panupong", y: 2.25 },
-                            { label: "Phurinut", y: 2.11 },
-                            { label: "Pusan", y: 3.12 },
-                            { label: "Mongkon", y: 3.00 },
-                            { label: "Supakit", y: 3.00 },
-                            { label: "Suphachai", y: 2.70 }
-                        ]
-                    }
-                ]
+                data: [{
+                    // Change type to "bar", "area", "spline", "pie",etc.
+                    type: "column",
+                    dataPoints: [{
+                            label: "Panupong",
+                            y: 2.25
+                        },
+                        {
+                            label: "Phurinut",
+                            y: 2.11
+                        },
+                        {
+                            label: "Pusan",
+                            y: 3.12
+                        },
+                        {
+                            label: "Mongkon",
+                            y: 3.00
+                        },
+                        {
+                            label: "Supakit",
+                            y: 3.00
+                        },
+                        {
+                            label: "Suphachai",
+                            y: 2.70
+                        }
+                    ]
+                }]
             });
             chart.render();
         }
-        
     </script>
 </body>
 
