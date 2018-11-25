@@ -16,72 +16,33 @@
         }
     </style>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart', 'bar']});
-      google.charts.setOnLoadCallback(drawStuff);
-
-      function drawStuff() {
-
-        var button = document.getElementById('change-chart');
-        var chartDiv = document.getElementById('chart_div');
-
-        var data = google.visualization.arrayToDataTable([
-          ['Galaxy', 'Distance', 'Brightness'],
-          ['Canis Major Dwarf', 8000, 23.3],
-          ['Sagittarius Dwarf', 24000, 4.5],
-          ['Ursa Major II Dwarf', 30000, 14.3],
-          ['Lg. Magellanic Cloud', 50000, 0.9],
-          ['Bootes I', 60000, 13.1]
-        ]);
-
-        var materialOptions = {
-          width: 900,
-          chart: {
-            title: '----------------',
-          },
-          series: {
-            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
-            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
-          },
-          axes: {
-            y: {
-              distance: {label: 'parsecs'}, // Left y-axis.
-              brightness: {side: 'right', label: 'apparent magnitude'} // Right y-axis.
-            }
-          }
-        };
-
-        var classicOptions = {
-          width: 900,
-          series: {
-            0: {targetAxisIndex: 0},
-            1: {targetAxisIndex: 1}
-          },
-          title: 'Nearby galaxies - distance on the left, brightness on the right',
-          vAxes: {
-            // Adds titles to each axis.
-            0: {title: 'parsecs'},
-            1: {title: 'apparent magnitude'}
-          }
-        };
-
-        function drawMaterialChart() {
-          var materialChart = new google.charts.Bar(chartDiv);
-          materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
-          button.innerText = 'Change to Classic';
-          button.onclick = drawClassicChart;
+<script type="text/javascript">
+    window.onload = function () {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light1", // "light2", "dark1", "dark2"
+        animationEnabled: false, // change to true		
+        title:{
+            text: "GPA"
+        },
+        data: [
+        {
+            // Change type to "bar", "area", "spline", "pie",etc.
+            type: "column",
+            dataPoints: [
+                { label: "Panupong",    y: 2.30  },
+                { label: "Purinat",     y: 2.30  },
+                { label: "Pusan",       y: 2.30  },
+                { label: "Mongkon",     y: 2.30  },
+                { label: "Supakit",     y: 2.30  },
+                { label: "Suphachai",   y: 2.30  }
+            ]
         }
-
-        function drawClassicChart() {
-          var classicChart = new google.visualization.ColumnChart(chartDiv);
-          classicChart.draw(data, classicOptions);
-          button.innerText = 'Change to Material';
-          button.onclick = drawMaterialChart;
-        }
-
-        drawMaterialChart();
-    };
+        ]
+    });
+    chart.render();
+    
+    }
     </script>
 </head>
 
@@ -100,12 +61,12 @@
         <div>
             Name : Panupong
             Lastname : Krewkudlao
-            Nickname : Beat 11111111
+            Nickname : Beat
         </div>
         <div>
             Name : Suphachai
             Lastname : Janchantuk
-            Nickname : Mhee1
+            Nickname : Mhee
         </div>
         <div>
             Name : Supakit
@@ -130,7 +91,8 @@
     </div>
    <!-- กราฟ -->
     <br><br>    
-   <center> <div id="chart_div" style="width: 800px; height: 500px;"></div> </center>
+   <center> <div id="chartContainer" style="height: 370px; width: 40%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script> </center>
    <br><br> 
 
 </body>
