@@ -22,10 +22,15 @@
           height: 100px;
       }
     </style>
+    <style>
+        .colorbg{
+            bgcolor : #C7DFE7;
+        }
+    </style>
 
 </head>
 
-<body class="txt-font">
+<body  class="txt-font" >
     <!----------------------------------------------------------->
     <h1 style="padding: 10px; margin: 25px; background-color: rgb(43, 49, 54); color: rgb(255, 255, 255);"> Software
         Engineering Work Lab01 - Github </h1>
@@ -191,40 +196,35 @@
             </div>
         </div>
     </div>
-    <!-- กราฟ -->
-    <br><br>
-    <center>
-        <div id="chartContainer" style="height: 370px; width: 40%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
-    </center>
-    <br><br>
 
-    <script type="text/javascript">
-        window.onload = function () {
+</div>
+   <!-- กราฟ -->
+    <br><br>    
+   <center> <div id="chartContainer" style="height: 370px; width: 40%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script> </center>
+   <br><br> 
 
-            var chart = new CanvasJS.Chart("chartContainer", {
-                theme: "light1", // "light2", "dark1", "dark2"
-                animationEnabled: false, // change to true		
-                title: {
-                    text: "GPA"
-                },
-                data: [
-                    {
-                        // Change type to "bar", "area", "spline", "pie",etc.
-                        type: "column",
-                        dataPoints: [
-                            { label: "Panupong", y: 2.30 },
-                            { label: "Purinat", y: 2.30 },
-                            { label: "Pusan", y: 2.30 },
-                            { label: "Mongkon", y: 2.30 },
-                            { label: "Supakit", y: 2.30 },
-                            { label: "Suphachai", y: 2.30 }
-                        ]
-                    }
-                ]
-            });
-            chart.render();
-
+   <script type="text/javascript">
+    window.onload = function () {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light1", // "light2", "dark1", "dark2"
+        animationEnabled: false, // change to true		
+        title:{
+            text: "GPA"
+        },
+        data: [
+        {
+            // Change type to "bar", "area", "spline", "pie",etc.
+            type: "column",
+            dataPoints: [
+                { label: "Panupong",    y: 2.25  },
+                { label: "Phurinut",    y: 2.11  },
+                { label: "Pusan",       y: 3.12  },
+                { label: "Mongkon",     y: 3.00  },
+                { label: "Supakit",     y: 3.00  },
+                { label: "Suphachai",   y: 2.70  }
+            ]
         }
     </script>
 </body>
